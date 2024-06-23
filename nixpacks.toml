@@ -5,7 +5,7 @@ version = "3.10"
 
 [dependencies]
 # Lista de pacotes do sistema a serem instalados
-apt = ["build-essential", "libmysqlclient-dev", "pkg-config"]
+apt = ["build-essential", "libmariadb-dev-compat", "libmariadb-dev", "pkg-config"]
 
 [commands.build]
 # Comando para criar o ambiente virtual e instalar dependências
