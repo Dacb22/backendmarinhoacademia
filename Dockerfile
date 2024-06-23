@@ -9,6 +9,9 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
+# Mostrar pacotes instalados para debug
+RUN dpkg -l | grep -E 'build-essential|libmariadb-dev-compat|libmariadb-dev|pkg-config'
+
 # Criar e ativar um ambiente virtual
 RUN python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
