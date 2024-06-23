@@ -16,6 +16,7 @@ from pathlib import Path
 import dj_database_url
 from dotenv import load_dotenv
 
+DATABASE_URL = "postgresql://postgres:AiKIldfAYfsJSvFqqvZeaXYzHQAYpwjn@viaduct.proxy.rlwy.net:21485/railway"
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -93,7 +94,8 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    'local': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'marinho_academia3',
         'USER': 'root',
