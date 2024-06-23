@@ -323,7 +323,7 @@ class NovoAluno(APIView):
         sexo = request.data.get('sexo')
         tipo_matricula_id = request.data.get('tipo_matricula_id')
         cpf = request.data.get('cpf')
-
+        cpf = str(cpf)
         # Validar se o CPF tem 11 dígitos
         if len(cpf) != 11:
             return Response(
